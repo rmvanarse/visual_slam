@@ -8,5 +8,9 @@ class Image:
 	def replace(self, new_img):
 		self.img = new_img
 
-	def gaussian_blur(self):
-		pass
+	def gaussian_blur(self, kernel_size=5):
+		ret_img = cv2.blur(self.img, (kernel_size, kernel_size))
+		return ret_img
+
+	def gaussian_diff(self, kernel_size=5):
+		return img - self.gaussian_blur(kernel_size)
