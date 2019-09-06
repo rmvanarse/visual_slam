@@ -1,7 +1,23 @@
+"""
+Created by: Rishikesh Vanarse
+
+27/08/2019
+"""
+
 import numpy as np
 import cv2
 
+"""
+To be imported in driver
+"""
+
 class Image:
+
+	"""
+	Wrapper class for images in cv2 for required functions
+	
+	"""
+
 	def __init__(self, np_matrix):
 		self.img = np_matrix
 
@@ -14,3 +30,6 @@ class Image:
 
 	def gaussian_diff(self, kernel_size=5):
 		return img - self.gaussian_blur(kernel_size)
+
+	def harrison_corners(self):
+		pass
