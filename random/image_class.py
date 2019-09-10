@@ -66,3 +66,16 @@ class Image:
 		modified_img[ret_img > HARRIS_THRESHOLD*ret_img.max()] = [0,0,255]
 
 		return modified_img
+
+	"""
+	SIFT
+	"""
+	def sift_direct(self):
+		greyscale_img = cv2.cvtColor(self.img, COLOR_BGR2GRAY)
+
+		sift = cv2.SIFT()
+		keyPoints  = sift.detect(gray, None)
+
+		sift_keypoints_img = cv2.drawKeypoints(gray, keyPoints)
+
+		return sift_keypoints_img
